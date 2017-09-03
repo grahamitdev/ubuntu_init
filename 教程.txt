@@ -1,0 +1,52 @@
+
+树莓派官网:
+https://www.raspberrypi.org/downloads/
+
+先用SDFormatter格式化SD卡为FAT32,或者直接格式化为FAT32
+然后把Noobs下载下来解压缩到SD根目录中，
+然后把SD卡插到树莓派中启动
+选择要安装的系统，可多选同时安装。
+后面的参考
+http://tieba.baidu.com/p/3145354272
+
+
+
+
+
+树莓派官网:
+https://www.raspberrypi.org/downloads/
+
+
+linux开机时会让选哪一个用户登录，正常是sudoers(sudo用户)但这个不是root用户
+
+新建用户：walter
+sudo adduser walter
+密码：walter
+密码：walter
+
+初始化root的密码
+sudo passwd root 或者sudo passwd
+密码：root
+密码：root
+
+下次切换用户只需
+su 用户名，然后输入对应的密码就行了
+
+补充：
+树莓派上默认的pi用户是一个sudoer（sudo用户）。
+这种类型的用户在命令行上输入命令之前先输入sudo就能拥有root权限执行命令，
+也能够通过sudo su完全切换到root用户。
+
+添加一个用户到sudoer用户组，需要使用一个sudo用户输入sudo visudo命令打开配置文件，
+找到文件中“# User privilege specification”下面的“root ALL=(ALL:ALL) ALL”。
+复制这一行并将其中的root替换为对应的用户名。
+为了免验证密码使用root权限，修改为NOPASSWD:ALL。
+
+
+
+
+关机命令
+sudo shutdown -h now、
+
+重启
+sudo reboot

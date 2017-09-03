@@ -1,0 +1,109 @@
+中文 man
+1. sudo apt-get install manpages-posix manpages-posix-dev
+2. sudo apt-get install manpages-zh
+
+安装软件
+下载.deb
+sudo dpkg -i ***.deb
+缺少依赖
+sudo apt install -f
+再次执行
+sudo dpkg -i ***.deb
+
+
+1、ubuntu装好首次使用su命令，输入密码显示验证失败，是因为密码没有初始化
+具体命令：sudo passwd（sudo passwd root）
+          输入新密码(这个密码和登陆系统的密码不是同一个密码)
+          重新输入
+          OK
+
+安全关机：su shutdown -h now
+2、sl(小火车)
+sudo apt-get install sl
+
+3、ls
+ls 列出当前目录下所有文件信息（不包括隐藏文件）
+ls -a 列出所有文件（包括隐藏文件）
+ls -l 列出所有文件属性（不包括隐藏文件）
+
+4、clear清屏
+
+5、ctrl+alt+t 打开终端
+
+6、cd 1707 进入文件夹
+
+7、cd .. 返回上一级目录
+   cd 返回根目录
+
+8、mkdir 1707 新建文件夹
+   touch test.c 新建文件
+   cat test.c 查看文件内容
+   more test.c 判断文件是否是文本文件
+
+9、pwd 打印档当前绝对地址，当前工作目录
+
+10、rm test.c 删除文件
+    rm -r 1708 删除文件夹以及里面的所有文件，递归删除
+    rm -f test.c 强制删除
+    使用rm 删除的文件都是永久删除，回收站里没有
+
+11、vim
+vim test.c 或者vi test.c 都行，如果之前没有test.c文件则新建test，c,如果之前有则进入编辑
+i:--插入--
+ESC+:：接受命令模式
+w:write写新的数据到文件
+q:quit推迟vim
+q!:强制删除，新的不要了
+
+复制粘贴
+（定光标）光标移至目标行/段首行
+ESC,不需要: 因为这个命令不用显示出来
+yy删除单行 nyy删除n行
+光标移至目标位置p粘贴
+
+删除
+（定光标）光标移至目标行
+ESC，不需要:，因为不需要显示出来
+dd删除一行 dnd删除n行
+
+撤销
+ESC，不需要:
+u撤销一步
+uuu……撤销多步
+
+分屏
+前提是现在仍然在vim中 ESC+: ,下面的指令需要显示出来
+横向分屏：sp 2.c  
+竖向分屏：vsp 2.c 如果2.c已经存在就打开，如果不存在就新建2.c
+分屏之间切换：  ESC，不需要: ,直接敲下面的命令  ctrl+ww
+
+配置vim:vimrc
+先su
+配置文件目录：vi  /etc/vim/vimrc   然后自己加属性   =左右两边没有空格
+常用配置：
+set nu        "显示行号"
+set ai        ""
+set ts=4      ""Tab=4
+set mouse=a   ""
+syntax on "语法高亮"
+set cursorline "突出显示当前行"
+set hlsearch "高亮显示搜索结果"
+
+fdopen()注意权限
+fileno()
+
+另外也可以只在普通用户级别设置
+vi ~/vimrc
+set nu        "显示行号"
+set ai        ""
+set ts=4      ""Tab=4
+set mouse=a   ""
+syntax on "语法高亮"
+set cursorline "突出显示当前行"
+set hlsearch "高亮显示搜索结果"
+OK
+
+
+
+12.ubuntu显示隐藏文件
+进入文件管理器：ctrl+h
